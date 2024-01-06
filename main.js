@@ -1,7 +1,7 @@
 var get = 1
 var t = 0
 var rebirth_point = 0
-buyed = [0,0,0,0,0]
+buyed = [0,0,0,0,0,0]
 up1price = 10;
 function auto_re(){
     rebirth_point = Math.round(Math.floor(t**0.09) * 0.8) + rebirth_point;
@@ -66,6 +66,9 @@ function re(){
     if (buyed[4] == 1){
         get = get + Math.floor(rebirth_point**0.6+1)
     }
+    if (buyed[4] == 1){
+        get = get + Math.floor(rebirth_point**1.1)
+    }
     document.getElementById("ret").innerHTML="你有" + rebirth_point + "科技点"
     update();
 }
@@ -88,6 +91,17 @@ function reup2(){
             rebirth_point = rebirth_point - self.price;
             buyed[4] = 1;
             document.getElementById("reup2").innerHTML="已购买";
+        }
+    }
+    update();
+} 
+function reup3(){
+    if (buyed[5] == 0){
+        self.price = 10;
+        if (rebirth_point > self.price || rebirth_point == self.price){
+            rebirth_point = rebirth_point - self.price;
+            buyed[5] = 1;
+            document.getElementById("reup3").innerHTML="已购买";
         }
     }
     update();
