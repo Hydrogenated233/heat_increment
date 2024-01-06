@@ -2,6 +2,7 @@
 <meta charset="UTF-8">
 <html>
     <head>
+        <title>热量增量</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="main.js"></script>
     </head>
@@ -11,5 +12,10 @@
         <button onclick="up1()" id="up1">升级1<br>10K<br>点一次加2K<br>已购买0/10</button>
         <button onclick="up2()" id="up2">升级2<br>100K<br>每秒点一次</button>
         <button onclick="up3()" id="up3">升级3<br>1000K<br>升级2效果翻倍</button>
+        <br><br><br>
+        <button onclick="re()" id="re">吸收热量并获得0个科技点</button>
+        <p id="ret">你有0科技点</p>
+        <button onclick="reup1()" id="reup1">科技升级1<br>1科技点<br>每秒获得80%科技点</button>
+        <button onclick="reup2()" id="reup2">科技升级2<br>3科技点<br>科技点以(x<sup>0.6</sup>+1)加成热量增益(在吸收热量时生效)</button>
     </body>
 </html>
