@@ -25,10 +25,10 @@ function up1(){
     if (buyed[0] < 10){
         if (t > up1price || t == up1price){
             t = t - up1price;
-            get = get + 2;
+            get = Math.ceil(get * 2.1);
             up1price = up1price * 2
             buyed[0] = buyed[0] + 1;
-            document.getElementById("up1").innerHTML="升级1<br>"+up1price+"K<br>点一次加2K<br>已购买"+buyed[0]+"/10";
+            document.getElementById("up1").innerHTML="升级1<br>"+up1price+"K<br>点一次的热量变为(ceil(获得*2.1))<br>已购买"+buyed[0]+"/10";
         }
     }else{
         document.getElementById("up1").innerHTML="已购买"+buyed[0]+"/10";
