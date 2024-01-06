@@ -1,7 +1,11 @@
 var get = 1
 var t = 0
-buyed = [0,0]
+buyed = [0,0,0]
 up1price = 10;
+function auto_click() {
+                addt();
+                update();
+              }
 function update(){
     document.getElementById("t").innerHTML = "你面前的这块物体现在有"+ t +"K";
     document.getElementById("get").innerHTML = "增加"+ get +"K";
@@ -32,11 +36,21 @@ function up2(){
             t = t - self.price;
             buyed[1] = 1;
             document.getElementById("up2").innerHTML="已购买";
-            function myFunction() {
-                addt();
-                update();
-              }
-              setInterval(myFunction, 1000);
+            up2e = setInterval(auto_click, 1000);
         }
     }
+    update();
+}  
+function up3(){
+    if (buyed[2] == 0){
+        self.price = 1000;
+        if (t > self.price || t == self.price){
+            t = t - self.price;
+            buyed[2] = 1;
+            document.getElementById("up3").innerHTML="已购买";
+            clearInterval(up2e);
+            setInterval(auto_click, 500);
+        }
+    }
+    update();
 }  
