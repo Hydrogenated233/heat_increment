@@ -3,6 +3,7 @@ var t = 0
 var rebirth_point = 0
 buyed = [0,0,0,0,0,0]
 up1price = 10;
+
 function auto_re(){
     rebirth_point = Math.round(Math.floor(t**0.09) * 0.8) + rebirth_point;
 }
@@ -105,4 +106,4 @@ function reup3(){
         }
     }
     update();
-}  
+}
